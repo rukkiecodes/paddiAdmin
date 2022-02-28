@@ -1,0 +1,48 @@
+{
+  "name": "trutpaddi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build && firebase deploy"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "apexcharts": "^3.32.1",
+    "chart.js": "^3.7.0",
+    "core-js": "^3.6.5",
+    "dat.gui": "^0.7.7",
+    "dotenv": "^12.0.1",
+    "gh-pages": "^3.2.3",
+    "gsap": "^3.9.1",
+    "morris.js": "^0.5.0",
+    "three": "^0.136.0",
+    "three-globe": "^2.21.3",
+    "three-glow-mesh": "^0.1.2",
+    "vue": "^2.6.11",
+    "vue-aos": "^2.3.0",
+    "vue-axios-cors": "^1.0.1",
+    "vue-cookies": "^1.7.4",
+    "vue-country-code": "^1.1.2",
+    "vue-meta": "^2.4.0",
+    "vue-morris": "^1.1.0",
+    "vue-resource": "^1.5.3",
+    "vue-router": "^3.2.0",
+    "vue-smooth-scrollbar": "^1.0.3",
+    "vuesax": "^4.0.1-alpha.25",
+    "vuetify": "^2.4.0",
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.5",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  }
+}
