@@ -15,9 +15,9 @@
               class="rounded-lg"
               rounded
             >
-              <!-- <v-icon :color="transaction.color" size="34">{{
+              <v-icon :color="transaction.color" size="34">{{
                 transaction.icon
-              }}</v-icon> -->
+              }}</v-icon>
             </v-avatar>
           </v-col>
           <v-col cols="9">
@@ -52,21 +52,13 @@
             <v-row no-gutters justify="space-between" align="center">
               <v-col cols="10" class="d-flex justify-start">
                 <span
-                  class="
-                    grey--text
-                    text--darken-2 text-body-2
-                    font-weight-light
-                  "
+                  class="grey--text text--darken-2 text-body-2 font-weight-light"
                   >{{ transaction.transactionsCount }} Transaction</span
                 >
               </v-col>
               <v-col class="d-flex justify-end">
                 <span
-                  class="
-                    grey--text
-                    text--darken-2 text-body-2
-                    font-weight-light
-                  "
+                  class="grey--text text--darken-2 text-body-2 font-weight-light"
                   >{{ transaction.sliderValue }}%</span
                 >
               </v-col>
@@ -128,11 +120,10 @@ export default {
       const sliders = document.querySelectorAll(
         ".transactionDetailes .v-slider--horizontal .v-slider__track-container"
       )
-
       if (sliders) {
-        for (let i = 0; i <= sliders.length; i++) {
-          sliders[i].style.height = "6px"
-        }
+        sliders.forEach((el) => {
+          el.style.height = "6px"
+        })
       }
     })
   },

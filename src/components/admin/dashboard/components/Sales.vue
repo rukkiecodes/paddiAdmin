@@ -16,21 +16,21 @@
           </v-col>
           <v-col cols="8">
             <v-sparkline
-              :labels="sell.labels"
-              :value="sell.value"
-              :color="sell.color"
-              line-width="7"
-              padding="16"
               auto-draw
-              :auto-draw-duration="2000"
+              padding="16"
               label-size="0"
+              line-width="7"
+              :color="sell.color"
+              :value="sell.value"
+              :labels="sell.labels"
               stroke-linecap="round"
+              :auto-draw-duration="2000"
             ></v-sparkline>
           </v-col>
           <v-col cols="2">
             <p class="text-body-1" :class="sell.textColor">
               {{ sell.rate }}
-              <!-- <v-icon :color="sell.color" small>{{ sell.icon }}</v-icon> -->
+              <v-icon :color="sell.color" small>{{ sell.icon }}</v-icon>
             </p>
           </v-col>
         </v-row>
