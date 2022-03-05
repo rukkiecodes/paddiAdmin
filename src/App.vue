@@ -1,25 +1,34 @@
 <template>
   <v-app id="paddi_app">
-    <v-main class="white">
-      <transition name="fade" mode="out-in">
-        <router-view />
-      </transition>
+    <v-app-bar app></v-app-bar>
+    <v-navigation-drawer app> <Sidebar /> </v-navigation-drawer>
+    <v-main>
+      <v-container fluid>
+        <transition name="fade" mode="out-in">
+          <router-view />
+        </transition>
+      </v-container>
     </v-main>
+    <!-- <v-footer app></v-footer> -->
   </v-app>
 </template>
 
 <script>
-import Vue from "vue"
+import Vue from "vue";
+import Sidebar from "./components/admin/navigation/Sidebar.vue"
 export default {
   name: "App",
+  components: {
+    Sidebar
+  },
 
   created() {
-    Vue.prototype.$vs = this.$vs
-    Vue.prototype.$axios = this.$axios
-    Vue.prototype.$cookies = this.$cookies
-    Vue.prototype.$vuetify = this.$vuetify
+    Vue.prototype.$vs = this.$vs;
+    Vue.prototype.$axios = this.$axios;
+    Vue.prototype.$cookies = this.$cookies;
+    Vue.prototype.$vuetify = this.$vuetify;
   },
-}
+};
 </script>
 
 <style>
@@ -40,5 +49,8 @@ html {
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+}
+.v-main {
+  padding-top: 65px !important;
 }
 </style>
