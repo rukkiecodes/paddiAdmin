@@ -1,20 +1,20 @@
 <template>
   <div class="dashboardColor">
-    <Nav />
+    <!-- <Nav /> -->
     <Dashboard />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
-import Nav from "../components/admin/navigation/Nav.vue"
-import Footer from "../components/admin/components/Footer.vue"
+// import Nav from "../components/admin/navigation/Nav.vue"
+// import Footer from "../components/admin/components/Footer.vue"
 import Dashboard from "../components/admin/dashboard/Dashboard.vue"
 export default {
   name: "Admin",
   components: {
-    Nav,
-    Footer,
+    // Nav,
+    // Footer,
     Dashboard,
   },
 }
@@ -33,7 +33,7 @@ export default {
   opacity: 0;
 }
 
-.dashboardColor {
+/* .dashboardColor {
   background: #f8f8fb !important;
-}
+} */
 </style>

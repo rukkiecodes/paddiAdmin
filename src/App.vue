@@ -1,12 +1,13 @@
 <template>
   <v-app id="paddi_app">
-    <v-app-bar app></v-app-bar>
+    <Nav />
     <v-navigation-drawer app> <Sidebar /> </v-navigation-drawer>
-    <v-main>
+    <v-main class="dashboardColor">
       <v-container fluid>
         <transition name="fade" mode="out-in">
           <router-view />
         </transition>
+        <Footer />
       </v-container>
     </v-main>
     <!-- <v-footer app></v-footer> -->
@@ -15,11 +16,15 @@
 
 <script>
 import Vue from "vue";
-import Sidebar from "./components/admin/navigation/Sidebar.vue"
+import Sidebar from "./components/components/navigation/Sidebar.vue";
+import Nav from "./components/components/navigation/Nav.vue";
+import Footer from "./components/components/Footer.vue";
 export default {
   name: "App",
   components: {
-    Sidebar
+    Sidebar,
+    Nav,
+    Footer,
   },
 
   created() {
@@ -52,5 +57,8 @@ html {
 }
 .v-main {
   padding-top: 65px !important;
+}
+.dashboardColor {
+  background: #f8f8fb !important;
 }
 </style>
