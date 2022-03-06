@@ -1,7 +1,9 @@
 <template>
   <v-app id="paddi_app">
-    <Nav />
-    <v-navigation-drawer app> <Sidebar /> </v-navigation-drawer>
+    <Nav :toggleSidebar="toggleSidebar" />
+    <!-- <v-navigation-drawer app> -->
+      <Sidebar :sidebar="sidebar" />
+    <!-- </v-navigation-drawer> -->
     <v-main class="dashboardColor">
       <v-container fluid>
         <transition name="fade" mode="out-in">
@@ -25,6 +27,16 @@ export default {
     Sidebar,
     Nav,
     Footer,
+  },
+  data() {
+    return {
+      sidebar: true,
+    };
+  },
+  methods: {
+    toggleSidebar() {
+      this.sidebar = !this.sidebar;
+    },
   },
 
   created() {

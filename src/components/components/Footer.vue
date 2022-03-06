@@ -8,7 +8,7 @@
         ></span
       >
       <span class="grey--text text--darken-2 text-body-2"
-        >Copyright {{ new Date().getFullYear() }} FinDash All Rights Reserved.
+        >Copyright {{ new Date().getFullYear() }} TrustPaddi Admin All Rights Reserved.
       </span>
     </v-col>
   </v-footer>

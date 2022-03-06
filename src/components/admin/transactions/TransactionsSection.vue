@@ -21,7 +21,7 @@
           prepend-inner-icon="mdi-magnify"
         ></v-text-field>
       </v-form>
-      <v-simple-table fixed-header height="300px">
+      <v-simple-table fixed-header>
         <template v-slot:default>
           <thead>
             <tr>
@@ -45,6 +45,9 @@
           </tbody>
         </template>
       </v-simple-table>
+      <div class="text-center">
+        <v-pagination v-model="page" :length="4"></v-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -55,6 +58,7 @@ export default {
   components: { TransactionCard },
   data() {
     return {
+      page: 1,
       data: [
         {
           title: "Total transaction",

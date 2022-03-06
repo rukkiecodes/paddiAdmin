@@ -1,6 +1,12 @@
 <template>
-  <v-card class="mx-auto" height="100%" width="256">
-    <v-navigation-drawer class="deep-purple darken-5" dark permanent>
+  <!-- <v-card class="mx-auto" height="100%" width="256"> -->
+    <v-navigation-drawer
+      v-model="sidebar"
+      class="deep-purple darken-5"
+      dark
+      parmanent
+      app
+    >
       <v-list>
         <v-list-item-avatar
           width="100"
@@ -28,13 +34,17 @@
         </div>
       </template> -->
     </v-navigation-drawer>
-  </v-card>
+  <!-- </v-card> -->
 </template>
 
 <script>
 export default {
+  props:{
+    sidebar: Boolean
+  },
   data() {
     return {
+      // sidebar: false,
       items: [
         { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
         { title: "Users", icon: "mdi-account-group", link: "/users" },
