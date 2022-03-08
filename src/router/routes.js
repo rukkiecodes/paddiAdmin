@@ -14,4 +14,14 @@ export default [
     name: "Transactions",
     component: () => import("../views/Transactions.vue"),
   },
+  {
+    path: "/disputes",
+    name: "Disputers",
+    component: () => import("../views/Disputes.vue"),
+  },
+  {
+    path: "/withdrawal",
+    name: "Withdrawals",
+    component: () => import("../views/Withdrawals"),
+  },
 ]

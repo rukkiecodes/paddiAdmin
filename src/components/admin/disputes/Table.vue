@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="my-4">
     <v-form>
       <v-text-field
         solo
@@ -26,9 +26,19 @@
             <td>{{ item.status }}</td>
             <td>{{ item.earings }}</td>
             <td>
-              <v-btn icon>
-                <v-icon>mdi-eye</v-icon>
-              </v-btn>
+              <v-menu bottom left>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn icon v-bind="attrs" v-on="on">
+                    <v-icon>mdi-dots-vertical</v-icon>
+                  </v-btn>
+                </template>
+
+                <v-list>
+                  <v-list-item v-for="(item, i) in items" :key="i">
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+              </v-menu>
             </td>
           </tr>
         </tbody>
@@ -42,7 +52,7 @@
 
 <script>
 export default {
-  name: "UsersSection",
+  name: "Table",
   data() {
     return {
       page: 1,
@@ -65,6 +75,11 @@ export default {
           status: "active",
           earings: 800,
         },
+      ],
+      items: [
+        { title: "Mark as resolved" },
+        { title: "Mark as un resolved" },
+        { title: "Mark as ongoing" },
       ],
     };
   },

@@ -1,5 +1,17 @@
 <template>
   <div>
+    <v-row class="my-5">
+      <v-col
+        v-for="(item, index) in data"
+        :key="index"
+        class="m-5"
+        cols="12"
+        md="5"
+        lg="4"
+      >
+        <TransactionCard :item="item" />
+      </v-col>
+    </v-row>
     <v-form>
       <v-text-field
         solo
@@ -12,10 +24,9 @@
       <template v-slot:default>
         <thead>
           <tr>
-            <th class="text-left">Name</th>
+            <th class="text-left">Withdrawal ID</th>
             <th class="text-left">Email</th>
-            <th class="text-left">Status</th>
-            <th class="text-left">Earnings</th>
+            <th class="text-left">Anount</th>
             <th width="150" class="text-left">Action</th>
           </tr>
         </thead>
@@ -24,10 +35,9 @@
             <td>{{ item.name }}</td>
             <td>{{ item.email }}</td>
             <td>{{ item.status }}</td>
-            <td>{{ item.earings }}</td>
             <td>
               <v-btn icon>
-                <v-icon>mdi-eye</v-icon>
+                <v-icon>mdi-delete</v-icon>
               </v-btn>
             </td>
           </tr>
@@ -39,31 +49,48 @@
     </div>
   </div>
 </template>
-
 <script>
+import TransactionCard from "../transactions/TransactionCard.vue";
 export default {
-  name: "UsersSection",
+  components: {
+    TransactionCard,
+  },
+  name: "WithdrawalSection",
   data() {
     return {
       page: 1,
+      data: [
+        {
+          title: "All time total withdrawals",
+          count: "1,000",
+          img: require("../../../assets/img1.png"),
+        },
+        {
+          title: "Total withdrawal for the month",
+          count: "800",
+          img: require("../../../assets/img2.png"),
+        },
+        {
+          title: "Total withdrawal for today",
+          count: "200",
+          img: require("../../../assets/img3.png"),
+        },
+      ],
       desserts: [
         {
-          name: "Frozen Yogurt",
+          name: "UU377378783",
           email: "email@gmail.com",
-          status: "active",
-          earings: 800,
+          status: 800,
         },
         {
           name: "Frozen Yogurt",
           email: "email@gmail.com",
-          status: "active",
-          earings: 800,
+          status: 8778,
         },
         {
           name: "Frozen Yogurt",
           email: "email@gmail.com",
-          status: "active",
-          earings: 800,
+          status: 7677,
         },
       ],
     };

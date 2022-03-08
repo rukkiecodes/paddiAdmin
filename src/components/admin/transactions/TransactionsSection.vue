@@ -39,7 +39,9 @@
               <td>{{ item.status }}</td>
               <td>{{ item.earings }}</td>
               <td>
-                <v-btn>hello</v-btn>
+                <v-btn icon>
+                  <v-icon>mdi-delete</v-icon>
+                </v-btn>
               </td>
             </tr>
           </tbody>

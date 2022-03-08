@@ -1,46 +1,46 @@
 <template>
   <!-- <v-card class="mx-auto" height="100%" width="256"> -->
-    <v-navigation-drawer
-      v-model="sidebar"
-      class="deep-purple darken-5"
-      dark
-      parmanent
-      app
-    >
-      <v-list>
-        <v-list-item-avatar
-          width="100"
-          height="100"
-          class="d-flex mx-auto my-5"
-        >
-          <v-img src="https://cdn.vuetifyjs.com/images/lists/3.jpg"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item v-for="item in items" :key="item.title" link>
-          <router-link :to="item.link" class="d-flex">
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </router-link>
+  <v-navigation-drawer
+    v-model="sidebar"
+    class="blue darken-3"
+    dark
+    parmanent
+    app
+  >
+    <v-list>
+      <v-list-item-avatar width="100" height="100" class="d-flex mx-auto my-5">
+        <v-img src="https://cdn.vuetifyjs.com/images/lists/3.jpg"></v-img>
+      </v-list-item-avatar>
+      <router-link
+        v-for="item in items"
+        :key="item.title"
+        :to="item.link"
+        class="d-flex"
+      >
+        <v-list-item link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
         </v-list-item>
-      </v-list>
+      </router-link>
+    </v-list>
 
-      <!-- <template v-slot:append>
+    <!-- <template v-slot:append>
         <div class="pa-2">
           <v-btn block> Logout </v-btn>
         </div>
       </template> -->
-    </v-navigation-drawer>
+  </v-navigation-drawer>
   <!-- </v-card> -->
 </template>
 
 <script>
 export default {
-  props:{
-    sidebar: Boolean
+  props: {
+    sidebar: Boolean,
   },
   data() {
     return {
@@ -53,10 +53,10 @@ export default {
           icon: "mdi-account-cash",
           link: "/transactions",
         },
-        { title: "Disputes", icon: "mdi-gavel", link: "/users" },
-        { title: "Stores", icon: "mdi-cart", link: "/users" },
-        { title: "Withdrawals", icon: "mdi-cash-fast", link: "/users" },
-        { title: "Logout", icon: "mdi-logout", link: "/users" },
+        { title: "Disputes", icon: "mdi-gavel", link: "/disputes" },
+        { title: "Stores", icon: "mdi-cart", link: "/" },
+        { title: "Withdrawals", icon: "mdi-cash-fast", link: "/withdrawal" },
+        { title: "Logout", icon: "mdi-logout", link: "/" },
       ],
     };
   },
